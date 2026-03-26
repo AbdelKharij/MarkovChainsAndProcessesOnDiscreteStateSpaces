@@ -1,21 +1,16 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{ximera}
 
-\usepackage{amsmath, amsthm, amssymb}
-\usepackage{geometry}
+\input{xmPreamble}
+
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta}
 
-\geometry{margin=1in}
-
-% Theorem environments
-\newtheorem{theorem}{Theorem}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}
-
-\title{Markov Chains and Processes on Discrete State Spaces} \date{} \author{}
+% Theorem environments (ximera provides theorem/definition natively,
+% but we redefine to match the original style)
+\title{Markov Chains and processes On Discrete State Spaces}
 \begin{document}
 \maketitle
-\vspace{-1.5cm}
+
 Consider a simple random walk on a ring.
 \vspace{1cm}
 
@@ -24,10 +19,10 @@ Consider a simple random walk on a ring.
 \begin{tikzpicture}[scale=1.5]
 % Pentagon vertices (top vertex first, going clockwise)
 \coordinate (A) at (90:1.25);     % top
-\coordinate (B) at (18:1);     % upper right
-\coordinate (C) at (-14:.5);    % lower right
-\coordinate (D) at (194:.5);   % lower left
-\coordinate (E) at (162:1);    % upper left
+\coordinate (B) at (18:1);        % upper right
+\coordinate (C) at (-14:.5);      % lower right
+\coordinate (D) at (194:.5);      % lower left
+\coordinate (E) at (162:1);       % upper left
 
 % Draw pentagon edges in gray (no filled nodes)
 \draw[gray, thick] (A) -- (B) -- (C) -- (D) -- (E) -- (A);
@@ -41,7 +36,7 @@ Consider a simple random walk on a ring.
 \end{tikzpicture}
 \caption{Figure 1: The simple random walk on a ring with five lattice sites.}
 \label{markov-ring}
-\end{figure}    
+\end{figure}
 
 In this example, there are five lattice sites on a ring. At each time step, a particle jumps to an adjacent
 site with probability $1/2$. We let $X_t$ denote the position of the particle at time $t$, where $t$ takes
